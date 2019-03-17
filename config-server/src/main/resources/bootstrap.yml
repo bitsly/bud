@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: ${APP_NAME:config-server}
+  profiles:
+    active: ${ENV_NAME:local}
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${REPO_GIT_URI:file:../config-repo}
+          search-paths: '{application}'
+          timeout: 5
+  mvc:
+    servlet:
+      load-on-startup: 1
+  jms:
+    listener:
+      acknowledge-mode:
+
+server:
+  port: ${APP_PORT:6666}
+
+encrypt:
+  key: ${SPRING_ENCRYPT_KEY:abracadabra}
+logging:
+  level:
+    root: info
