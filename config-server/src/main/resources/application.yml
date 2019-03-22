@@ -1,11 +1,30 @@
 spring:
   application:
-    name: demo-provider
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${REPO_GIT_URI:file:../common-repo/config}
+          search-paths: '{application}'
+          timeout: 5
+  mvc:
+    servlet:
+      load-on-startup: 1
+server:
+  port: ${APP_PORT:6666}
+encrypt:
+  key: ${SPRING_ENCRYPT_KEY:abracadabra}
+logging:
+  level:
+    root: debug
 dubbo:
   scan:
-    base-packages: org.bitsly.bud
+    base-packages: org.bitsly.bud.configserver.service
   protocol:
-    name: provide
+    name: dubbo
     port: 3333
   registry:
     address: N/A
+  application:
+    version: 1.0.0
