@@ -7,15 +7,12 @@ spring:
     config:
       server:
         git:
-          uri: ${REPO_GIT_URI:file:../config-repo}
+          uri: ${REPO_GIT_URI:file:../common-repo/config}
           search-paths: '{application}'
           timeout: 5
   mvc:
     servlet:
       load-on-startup: 1
-  jms:
-    listener:
-      acknowledge-mode:
 
 server:
   port: ${APP_PORT:6666}

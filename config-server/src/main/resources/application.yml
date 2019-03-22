@@ -1,17 +1,11 @@
-info:
-  app: ${APP_NAME:NOT_SET}
-  env: ${ENV_NAME:NOT_SET}
-  host: ${HOST_NAME:NOT_SET}
-  build:
-    label: ${BUILD_GIT_LABEL:NOT_SET}
-    version: ${BUILD_GIT_VERSION:NOT_SET}
-    hash: ${BUILD_GIT_HASH:NOT_SET}
-    time: ${BUILD_TIME:NOT_SET}
-    timestamp: ${BUILD_TIMESTAMP:NOT_SET}
 spring:
-  mongodb:
-    embedded:
-      storage:
-        oplog-size:
-
-
+  application:
+    name: demo-provider
+dubbo:
+  scan:
+    base-packages: org.bitsly.bud
+  protocol:
+    name: provide
+    port: 3333
+  registry:
+    address: N/A

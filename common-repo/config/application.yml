@@ -1,0 +1,11 @@
+info:
+  app: ${APP_NAME:NOT_SET}
+  env: ${ENV_NAME:NOT_SET}
+  host: ${HOST_NAME:NOT_SET}
+  build:
+    label: ${BUILD_GIT_LABEL:NOT_SET}
+    version: ${BUILD_GIT_VERSION:NOT_SET}
+    hash: ${BUILD_GIT_HASH:NOT_SET}
+    time: ${BUILD_TIME:NOT_SET}
+    timestamp: ${BUILD_TIMESTAMP:NOT_SET}
+

@@ -1,9 +1,9 @@
 package org.bitsly.bud.wms.service;
 
-import com.alibaba.dubbo.config.annotation.Reference;
-import javax.annotation.PostConstruct;
 import org.bitsly.bud.base.api.ConfigService;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
 
 /**
  * Created by liuhuan on 2019/1/28.
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class SayHelloServiceImpl {
 
-    @Reference(url = "dubbo://127.0.0.1:20880")
     private ConfigService configService;
 
     @PostConstruct
