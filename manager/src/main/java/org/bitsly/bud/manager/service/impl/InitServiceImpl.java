@@ -1,9 +1,9 @@
 package org.bitsly.bud.manager.service.impl;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
+
+import com.alibaba.nacos.api.config.annotation.NacosValue;
 import lombok.extern.slf4j.Slf4j;
-import org.bitsly.bud.manager.dao.ConfigDao;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,11 +12,11 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 public class InitServiceImpl {
-    @Resource
-    private ConfigDao configDao;
+    @NacosValue("${aa}")
+    private String ab;
 
-    @PostConstruct
+    @Scheduled(fixedDelay = 5_000)
     public void init() {
-        log.warn(configDao.select(2222) + " -------------");
+        log.warn(" -------------" + ab);
     }
 }
