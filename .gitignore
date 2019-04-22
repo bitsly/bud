@@ -1,5 +1,6 @@
 ### maven ###
 target/
+var/
 
 ### STS ###
 .DS_Store

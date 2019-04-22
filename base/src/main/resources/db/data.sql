@@ -1,0 +1,1 @@
+INSERT INTO t_kv_config VALUES (1,'test', 'testvalue');
