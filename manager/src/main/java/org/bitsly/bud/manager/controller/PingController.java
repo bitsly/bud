@@ -1,10 +1,10 @@
 package org.bitsly.bud.manager.controller;
 
-import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSON;
+import org.apache.dubbo.config.annotation.Reference;
 import org.bitsly.bud.base.pojo.entity.KVConfigEntity;
 import org.bitsly.bud.base.service.KVConfigService;
-import org.bitsly.bud.base.service.PingService;
+import org.bitsly.bud.base.service.HealthService;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class PingController {
     @Reference
-    private PingService pingService;
+    private HealthService pingService;
     @Reference
     private KVConfigService kvConfigService;
 

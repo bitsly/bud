@@ -1,5 +1,5 @@
 package org.bitsly.bud.base.service;
 
-public interface PingService {
+public interface HealthService {
     String ping();
 }

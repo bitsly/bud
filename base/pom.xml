@@ -9,7 +9,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>base</artifactId>
-    <name>config</name>
+    <name>base</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
