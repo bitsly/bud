@@ -21,6 +21,7 @@ import java.util.Set;
 
 /**
  * https://github.com/alibaba/Sentinel/wiki/%E7%BD%91%E5%85%B3%E9%99%90%E6%B5%81
+ * https://mp.weixin.qq.com/s?__biz=MzIwMDY0Nzk2Mw==&mid=2650320203&idx=1&sn=2ba1d0ffe7ca192a859ddb0dff08b83e&chksm=8ef5f93fb9827029911f48fffa8e715ede26417795c6ca172c2b8a260b20083bf5263d3f5728&scene=27#wechat_redirect
  */
 @Configuration
 public class GatewayConfiguration {
