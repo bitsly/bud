@@ -13,6 +13,6 @@ public class InfoController {
 
     @GetMapping("/information")
     public Object info() {
-        return infoService.getInfo();
+        throw new RuntimeException();
     }
 }
