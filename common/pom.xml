@@ -8,19 +8,15 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>base</artifactId>
-    <name>base</name>
+    <artifactId>common</artifactId>
+    <name>common</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.bitsly.bud</groupId>
-            <artifactId>common</artifactId>
-            <version>${project.version}</version>
-        </dependency>
+
     </dependencies>
 
 
