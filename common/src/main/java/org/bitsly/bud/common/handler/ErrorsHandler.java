@@ -40,10 +40,10 @@ public class ErrorsHandler implements ErrorController {
         Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
         if (Objects.equals(HttpStatus.INTERNAL_SERVER_ERROR.value(), statusCode)) {
             //代码异常或运行时异常 的服务端错误  （会打印异常）
-            return Result.fail(Code.C500);
+            return Result.fail(Code.C500, null);
         }else {
             //400 未捕获的参数错误 、 404 路径未找到 、 405 动词不允许 的客户端错误 （不会打印异常）
-            return Result.fail(statusCode);
+            return Result.fail(statusCode, null);
         }
     }
 

@@ -3,6 +3,7 @@ package org.bitsly.bud.common.handler;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.bitsly.bud.common.constant.Code;
+import org.bitsly.bud.common.exception.BizException;
 import org.bitsly.bud.common.util.Result;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindException;
@@ -44,7 +45,7 @@ public class ExceptionsHandler {
         List<ObjectError> globalErrors = bindingResult.getGlobalErrors();
         if (CollectionUtils.isNotEmpty(globalErrors)) {
             for (ObjectError error : globalErrors) {
-                return Result.fail(Code.C400, null, error.getDefaultMessage());
+                return Result.fail(Code.C400, error.getDefaultMessage());
             }
         }
 
@@ -52,17 +53,23 @@ public class ExceptionsHandler {
         List<FieldError> fieldErrors = bindingResult.getFieldErrors();
         if (CollectionUtils.isNotEmpty(fieldErrors)) {
             for (FieldError error : fieldErrors) {
-                return Result.fail(Code.C400, null, error.getDefaultMessage());
+                return Result.fail(Code.C400, error.getDefaultMessage());
             }
         }
         log.error("校验异常");
-        return Result.fail(Code.C500);
+        return Result.fail(Code.C500, null);
     }
 
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
     @ExceptionHandler(value = ConstraintViolationException.class)
     public Result validParam(HttpServletRequest req, ConstraintViolationException e) {
         String message = e.getConstraintViolations().iterator().next().getMessage();
-        return Result.fail(Code.C400, null, message);
+        return Result.fail(Code.C400, message);
+    }
+
+    @ResponseStatus(value = HttpStatus.OK)
+    @ExceptionHandler(value = BizException.class)
+    public Result fail(HttpServletRequest req, BizException e) {
+        return Result.fail(e.getCode(), null);
     }
 }
