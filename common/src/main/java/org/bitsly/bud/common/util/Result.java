@@ -6,7 +6,7 @@ public class Result<T> {
     private String message;
     private T data;
 
-    public Boolean success() {
+    public Boolean isSuccess() {
         return success;
     }
 
@@ -26,6 +26,15 @@ public class Result<T> {
         return ContextUtil.getContext().getMessage('C'+ String.valueOf(code),
                 null,
                 LocaleUtil.getLocale());
+    }
+
+    public static <E> Result<E> success() {
+        Result<E> result = new Result<E>();
+        result.success = true;
+        result.code = "0";
+        result.message = queryMsg(0);
+        result.data = null;
+        return result;
     }
 
     public static <E> Result<E> success(E data) {
