@@ -1,9 +1,9 @@
-package org.bitsly.bud.base;
+package org.bitsly.bud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackages = {"org.bitsly.bud.common", "org.bitsly.bud.base"})
+@SpringBootApplication
 public class BaseApplication {
 
     public static void main(String[] args) {
