@@ -63,4 +63,13 @@ public class Result<T> {
         result.data = data;
         return result;
     }
+
+    public static <E> Result<E> fail(Integer code, E data, String msg) {
+        Result<E> result = new Result<E>();
+        result.success = false;
+        result.code = String.valueOf(code);
+        result.message = msg;
+        result.data = data;
+        return result;
+    }
 }
