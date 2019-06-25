@@ -249,6 +249,7 @@
 	<modules>
 		<module>common</module>
 		<module>base</module>
+		<module>user</module>
 		<module>gateway</module>
 		<module>manager</module>
 	</modules>
