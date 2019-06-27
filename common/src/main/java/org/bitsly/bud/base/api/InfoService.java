@@ -1,5 +1,6 @@
-package org.bitsly.bud.base.service;
+package org.bitsly.bud.base.api;
 
 public interface InfoService {
+
     Object getInfo();
 }

@@ -1,7 +1,7 @@
 package org.bitsly.bud.base.service.impl;
 
 import org.apache.dubbo.config.annotation.Service;
-import org.bitsly.bud.base.service.InfoService;
+import org.bitsly.bud.base.api.InfoService;
 
 import java.util.HashMap;
 import java.util.Map;
