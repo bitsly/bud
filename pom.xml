@@ -14,8 +14,9 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.11</java.version>
+		<java.version>1.8</java.version>
 		<spring-boot.version>2.0.9.RELEASE</spring-boot.version>
+		<spring-cloud.version>Finchley.SR3</spring-cloud.version>
 		<nacons-config.version>0.2.2.RELEASE</nacons-config.version>
 		<dubbo.version>2.7.1</dubbo.version>
 	</properties>
@@ -27,6 +28,15 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
 				<version>${spring-boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- Spring Cloud -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -129,8 +139,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
-
 
 		<!-- log-->
 		<dependency>

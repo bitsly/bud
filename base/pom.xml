@@ -21,6 +21,12 @@
             <artifactId>common</artifactId>
             <version>${project.version}</version>
         </dependency>
+
+        <!-- Vault -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-vault-config</artifactId>
+        </dependency>
     </dependencies>
 
 
